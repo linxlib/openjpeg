@@ -2,8 +2,8 @@ github.com/chai2010/webp v1.1.2-0.20220219151144-e81c7511b15a h1:YE8c3WqMtUoBKi2
 github.com/chai2010/webp v1.1.2-0.20220219151144-e81c7511b15a/go.mod h1:0XVwvZWdjjdxpUEIf7b9g9VkHFnInUSYujwqTLEuldU=
 github.com/linxlib/logs v0.1.5 h1:QyzE71DWiXxnlTZSrlpulv5Rm6NKNtesDJMnd8+AUCI=
 github.com/linxlib/logs v0.1.5/go.mod h1:a2IkOlWtfecU5K5a+GVdED6EpRkFsbtFPYWCBtcE1Tg=
-github.com/linxlib/openjpeg v0.0.1 h1:puRsma9klngoaRygYBTcq3VdnMcUGNXYr5Rap0zFfAw=
-github.com/linxlib/openjpeg v0.0.1/go.mod h1:MwKjufH8cAEkXeqceyeE+JLTfpCowk6BC1Vuf27Ft+Y=
+github.com/linxlib/openjpeg v0.0.2 h1:bOR+u+yiCEAiPED++t+7UyUPAuPipbQ0eZKsIWsa29E=
+github.com/linxlib/openjpeg v0.0.2/go.mod h1:9AglkiDJJgi/Iy65hb5Ia8ODph7tplv6LsB+1oIMGDc=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
