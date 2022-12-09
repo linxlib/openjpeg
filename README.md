@@ -1,4 +1,4 @@
-# openjpeg
+# openjpeg ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/linxlib/openjpeg?style=flat-square)
 golang wrapper for openjpeg library
 
 # description
