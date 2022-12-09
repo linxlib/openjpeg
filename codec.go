@@ -5,6 +5,7 @@ package openjpeg_go
 /*
 #cgo CFLAGS: -Iinclude -O2 -fomit-frame-pointer
 #cgo !windows LDFLAGS: ${SRCDIR}/include/libopenjp2.a
+#cgo windows LDFLAGS: ${SRCDIR}/include/win/libopenjp2.a
 #ifndef OPJ_STATIC
 #define OPJ_STATIC
 #endif
