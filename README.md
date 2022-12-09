@@ -2,7 +2,7 @@
 golang wrapper for openjpeg library
 
 # description
-only tested on `windows x64 (Windows 7 Windows 10)` `Mac OS X 13` `centos 7` `ubuntu 22.04`. you should test it yourself for other platform
+only tested on `windows x64 (Windows 7 Windows 10)` `Mac OS X 13` `centos 7` `ubuntu 22.04`. you should test it yourself for other platforms.
 
 # usage
 refer to `example` dir
@@ -55,3 +55,13 @@ May be you don't need to install openjpeg just like linux.
 - `cd openjpeg/example`
 - `go run main.go`
 - then you get a `jp2000.jpg` in the same dir. you can change the example code to get different image file
+
+
+## TODO
+
+- [ ] cross compile (compile executable file in only one platform (may be docker))
+- [ ] add some other platforms support
+
+
+
+
