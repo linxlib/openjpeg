@@ -1,5 +1,5 @@
 # openjpeg ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/linxlib/openjpeg?style=flat-square)
-golang wrapper for openjpeg library
+golang wrapper for openjpeg library v2.5.0
 
 # description
 only tested on `windows x64 (Windows 7 Windows 10)` `Mac OS X 13` `centos 7` `ubuntu 22.04`. you should test it yourself for other platforms.
