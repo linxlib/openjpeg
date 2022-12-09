@@ -1,6 +1,9 @@
 # openjpeg
 golang wrapper for openjpeg library
 
+# description
+only tested on `windows x64 (Windows 7 Windows 10)` `Mac OS X 13` `centos 7` `ubuntu 22.04`. you should test it yourself for other platform
+
 # usage
 refer to `example` dir
 ```go
