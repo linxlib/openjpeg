@@ -7,4 +7,9 @@ require (
 	github.com/linxlib/logs v0.1.5
 	github.com/linxlib/openjpeg v0.0.1
 	golang.org/x/image v0.2.0
+
+)
+
+replace (
+	github.com/linxlib/openjpeg => ../
 )

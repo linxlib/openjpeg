@@ -8,9 +8,9 @@ import (
 	"golang.org/x/image/bmp"
 	"golang.org/x/image/tiff"
 	"image"
+
 	"image/gif"
 	"image/jpeg"
-
 	"image/png"
 	"io"
 	"log"
@@ -93,6 +93,7 @@ const rfmts = "[jpg|jp2|png|webp|tiff|bmp|gif]"
 const wfmts = "[jpg|jp2|png|webp|tiff|bmp|gif]"
 
 func main() {
+
 	encTab := map[string]encFun{
 		".png":  png.Encode,
 		".bmp":  bmp.Encode,

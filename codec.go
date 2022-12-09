@@ -3,14 +3,12 @@
 package openjpeg_go
 
 /*
-#cgo CFLAGS: -O2 -fomit-frame-pointer
-#cgo windows AND amd64 CFLAGS: -Iinclude
-#cgo !windows AND !amd64 CFLAGS: -Iinclude
-#cgo !windows OR !amd64 LDFLAGS: -lopenjp2
+#cgo CFLAGS: -Iinclude -O2 -fomit-frame-pointer
+#cgo !windows LDFLAGS: ${SRCDIR}/include/libopenjp2.a
 #ifndef OPJ_STATIC
 #define OPJ_STATIC
 #endif
-#include <openjpeg-2.5/openjpeg.h>
+#include "openjpeg-2.5/openjpeg.h"
 OPJ_SIZE_T readFunc(void *p_buffer, OPJ_SIZE_T p_nb_bytes, void *p_user_data);
 OPJ_SIZE_T writeFunc(void *p_buffer, OPJ_SIZE_T p_nb_bytes, void *p_user_data);
 OPJ_OFF_T skipFunc(OPJ_OFF_T p_nb_bytes, void *p_user_data);
