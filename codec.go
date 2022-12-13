@@ -24,6 +24,7 @@ import (
 	"image/color"
 	"io"
 	"math"
+	"reflect"
 	"runtime"
 	"unsafe"
 )
@@ -161,6 +162,7 @@ func (c *C.opj_image_comp_t) encodeComp(buf []byte, pixelStride, stride int) {
 }
 
 func (c *C.opj_image_comp_t) decodeComp(buf []byte, pixelStride int) {
+
 	var shl, shr uint
 	// TODO: 16bit variants?
 	if c.prec < 8 {
@@ -203,9 +205,31 @@ func (c *codec) decode() (img image.Image) {
 		}
 		img = pic
 	case C.OPJ_CLRSPC_GRAY:
-		pic := image.NewGray(image.Rect(0, 0, int(c.image.x1), int(c.image.y1)))
-		c.comp(0).decodeComp(pic.Pix, 1)
-		img = pic
+		//handle 16bit
+		var comps []C.opj_image_comp_t
+		compsSlice := (*reflect.SliceHeader)(unsafe.Pointer(&comps))
+		compsSlice.Cap = int(c.image.numcomps)
+		compsSlice.Len = int(c.image.numcomps)
+		compsSlice.Data = uintptr(unsafe.Pointer(c.image.comps))
+
+		bounds := image.Rect(0, 0, int(comps[0].w), int(comps[0].h))
+		var data []int32
+		dataSlice := (*reflect.SliceHeader)(unsafe.Pointer(&data))
+		dataSlice.Cap = bounds.Dx() * bounds.Dy()
+		dataSlice.Len = bounds.Dx() * bounds.Dy()
+		dataSlice.Data = uintptr(unsafe.Pointer(comps[0].data))
+
+		pic1 := &DicomImage{
+			level:  80,
+			width:  600,
+			data:   data,
+			bounds: bounds,
+			stride: bounds.Dx(),
+		}
+		//pic := image.NewGray(image.Rect(0, 0, int(c.image.x1), int(c.image.y1)))
+		//c.comp(0).decodeComp(pic.Pix, 1)
+		//
+		img = pic1
 	case C.OPJ_CLRSPC_SYCC:
 		ssr := c.getSSR()
 		if ssr == YCbCrSubsampleRatioUnknown {
@@ -241,7 +265,6 @@ type Options struct {
 }
 
 func (c *codec) encode(img image.Image, o *Options) (ok bool) {
-	//	c.stream = C.opj_stream_create_file_stream(C.CString("e:/off.jp2"), 0x100000, 0)
 	defer c.destroy()
 	var cspc C.OPJ_COLOR_SPACE
 	var cpar [4]C.opj_image_cmptparm_t
